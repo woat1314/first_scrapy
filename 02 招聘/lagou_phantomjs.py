@@ -36,7 +36,7 @@ driver = webdriver.Chrome('/usr/local/Cellar/chromedriver/chromedriver',chrome_o
 # dcap["phantomjs.page.settings.userAgent"] = ( "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36" )
 # driver = webdriver.PhantomJS(executable_path='/usr/local/Cellar/phantomjs/bin/phantomjs', desired_capabilities=dcap)
 # 打开页面
-driver.get("https://www.lagou.com/jobs/list_%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86?px=default&city=%E5%8D%97%E4%BA%AC#filterBox")
+driver.get("https://www.lagou.com/jobs/list_%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86?px=default&yx=15k-25k&city=%E5%8D%97%E4%BA%AC#order")
 wait = WebDriverWait(driver,5)
 
 # XPATH方式————————————————问题：经验每隔3条记录才能抓取
@@ -72,7 +72,7 @@ wait = WebDriverWait(driver,5)
 
 # CSS选择器方式——————————————————问题：经验文字未去除薪水
 # 注意先确定筛选条件后的翻页数量
-for i in range(0,11):
+for i in range(0,2):
     i=0
     html = driver.page_source
     soup = BeautifulSoup(html,'lxml')
